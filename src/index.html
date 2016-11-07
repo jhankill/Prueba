@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="myapp">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>PEC02-7 Examen App</title>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+</head>
+<body ng-controller="MyCtrl as ctrl">
+
+<div class="navbar navbar-default navbar-static-top">
+        <div class="container">
+                <div class="navbar-header">
+                        <button type="button" class="navbar-toggle"
+                                data-toggle="collapse" data-target="#navbar-ex-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                                <img class="logo" src="img/logoUOC2000.png"></img></a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                                <li class="active"><a href="index.html">Home</a></li>
+                        </ul>
+                </div>
+        </div>
+</div>
+<div class="section">
+        <div class="container">
+                <div class="row">
+                        <div class="col-md-6">
+                                <div class="col-sm-5"><Label for="filetoload" class="control-label">Elija el archivo de examen: </Label></div>
+                                <div class="col-sm-10">
+                                    <input type="file"
+                                          id="filetoload"
+                                          name="filetoload"
+                                          accept="data/json"
+                                          class="btn btn-default">
+                                    <button class="btn btn-default" ng-click="ctrl.selectfile()">Cargar Examen</button>
+                                </div>
+
+
+                        </div>
+                        <div class="col-md-6">
+                                <div class="col-sm-10">
+                                    <h3 id="note"> Nota : <span>{{ctrl.nota}}</span></h3>
+
+                                </div>
+
+                        </div>
+                </div>
+        </div>
+</div>
+<div class="splitter"></div>
+<div class="section">
+        <div class="container">
+                <div class="row">
+                        <div class="col-md-12">
+                                <div class="jumbotron">
+                                        <div class="container">
+                                                <h3>Pregunta: </h3>
+                                                <p ng-bind="ctrl.pregunta"
+                                                   id="question"></p>
+                                        </div>
+                                </div>
+                                <div class="jumbotron">
+                                        <div class="container">
+                                            <form>
+                                                <h3>Respuesta: </h3>
+                                                <p></p>
+
+                                                <div id="answer" class="radio">
+                                                        <label>
+                                                                <input id="answertrue" ng-model="ctrl.answer.respuesta" value="VERDADERO" type="radio">
+                                                                Verdadero
+                                                        </label>
+                                                </div>
+                                                <div class="radio">
+                                                        <label>
+                                                                <input id="answerfalse" ng-model="ctrl.answer.respuesta" value="FALSO" type="radio">
+                                                                Falso
+                                                        </label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="col-md-12">
+                                <ul class="pager">
+                                        <li><a id="previous" ng-click="ctrl.previous()" href="#">← Prev</a></li>
+                                        <li><a id="next" ng-click="ctrl.next()"href="#">Next →</a></li>
+                                </ul>
+                        </div>
+                </div>
+        </div>
+</div>
+<footer class="section section-primary">
+        <div class="container">
+                <div class="row">
+                        <div class="col-sm-6">
+                                <h1>Juan Carlos Sánchez Mirabal</h1>
+                                <p>PEC 02 Ejercicio 7 Examen App<br>
+                                        Desarro. front-end frameworks Javascript</p>
+                        </div>
+                        <div class="col-sm-6">
+                                <p class="text-info text-right"> <br><br></p>
+
+                        </div>
+                </div>
+        </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-2.2.2.min.js">\x3C/script>')</script>
+<script type="text/javascript" src="js/all.min.js"></script>
+
+</body>
+</html>
